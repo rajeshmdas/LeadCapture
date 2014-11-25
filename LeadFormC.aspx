@@ -1,24 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LeadForm.aspx.cs" Inherits="LnTMfWebLink.LeadForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LeadFormC.aspx.cs" Inherits="LnTMfWebLink.LeadFormC" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 <meta id="MetaKeywords" name="KEYWORDS" content="Lead Capture Form" />
 <meta id="MetaDescription" name="DESCRIPTION" content="Lead Capture Form"/>
-<title>L&amp;T Lead Capture Form</title>
+<title>L&amp;T Lead Capture Form Cookie Sample</title>
 
 <link type="text/css" href="css/style.css"  rel="Stylesheet" />
 <script type="text/javascript" language="javascript" src="scripts/leadtracker.js"></script>
-<% 
-   
-    LnTMfWebLink.Models.LeadCapture lcf = (LnTMfWebLink.Models.LeadCapture)Session["lead"];
-    if (lcf == null)
-    {
-        lcf = new LnTMfWebLink.Models.LeadCapture();
-        
-    }
-%>
 <script type="text/javascript" language="javascript">
+    
 
 window.history.forward(1);
 if (navigator.appName == "Netscape" || navigator.appName == "Opera") {
@@ -511,7 +503,7 @@ function ControlVisible() {
                         </div>
                         <div class="Row" id="divCity">
                             <div >
-                                <span id="spCity" class="spantxt">City</span> <span id="CitEmp" class="Starvisible">*</span>
+                                <span id="spCity" class="spantxt">Place</span> <span id="CitEmp" class="Starvisible">*</span>
                             </div>
                             <div >
                                     <select name="lc_city" id="ddlCity" class="ddlList" >
@@ -587,26 +579,24 @@ function ControlVisible() {
                     <input type="hidden" name="lc_applicationid" id="lc_applicationid" value="CAMSWS" />
                     <input type="hidden" name="lc_leadid" id="lc_leadid" value="11" />
                     <input type="hidden" name="lc_campaigncode" id="lc_campaigncode" value="5001" />
-                    <input type="hidden" name="lc_target" id="lc_target" value="<%= lcf.Target %>" />
-                    <input type="hidden" name="lc_placement" id="lc_placement" value="<%= lcf.Placement %>" />
-                    <input type="hidden" name="lc_device" id="lc_device" value="<%= lcf.Device %>" />
-                    <input type="hidden" name="lc_creative" id="lc_creative" value="<%= lcf.Creative %>" />
-                     <input type="hidden" name="lc_keyword" id="lc_keyword" value="<%= lcf.Keyword %>" />
-                    <input type="hidden" name="lc_matchtype" id="lc_matchtype" value="<%= lcf.Match_Type %>" />
-                    <input type="hidden" name="lc_network" id="lc_network" value="<%= lcf.Network %>" />
-                    <input type="hidden" name="lc_campaignname" id="lc_campaignname" value="<%= lcf.Campaign_Name %>" />
-                    <input type="hidden" name="lc_campaigntype" id="lc_campaigntype" value="<%= lcf.Campaign_Type %>" />
+                    <input type="hidden" name="lc_target" id="lc_target" value="" />
+                    <input type="hidden" name="lc_placement" id="lc_placement" value="" />
+                    <input type="hidden" name="lc_device" id="lc_device" value="" />
+                    <input type="hidden" name="lc_creative" id="lc_creative" value="" />
+                     <input type="hidden" name="lc_keyword" id="lc_keyword" value="" />
+                    <input type="hidden" name="lc_matchtype" id="lc_matchtype" value="" />
+                    <input type="hidden" name="lc_network" id="lc_network" value="" />
+                    <input type="hidden" name="lc_campaignname" id="lc_campaignname" value="" />
+                    <input type="hidden" name="lc_campaigntype" id="lc_campaigntype" value="" />
                     <input type="hidden" name="lc_lead" id="lc_lead" value="" />
 
-            <input type="hidden" name="erropage" id="erropage" value="/error.html" />
-            <input type="hidden" name="infopage" id="infopage" value="/info.html" />
+          
     </form>
 </div>
 
 <script>
     ControlVisible();
     leadTracker();
-</script>
 </script>
 </body>
 </html>
